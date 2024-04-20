@@ -1,4 +1,4 @@
-describe('Homework_M04 + wzmień po 5 elementów po: ', () => {
+describe('Homework_M04 + wymień 5 elementów po: ', () => {
 
     beforeEach(()=>{
         cy.visit("https://fabrykatestow.pl/")
@@ -6,7 +6,7 @@ describe('Homework_M04 + wzmień po 5 elementów po: ', () => {
 
     it('5 elementów - ID', () => {
 
-        // get -> https://docs.cypress.io/api/commands/get
+        // doc -> https://docs.cypress.io/api/commands/get
 
         cy.log("ID")
         cy.get('#menu-item-923');
@@ -42,7 +42,7 @@ describe('Homework_M04 + wzmień po 5 elementów po: ', () => {
     })
 
     it('5 elementów - TEKST', () => {
-        // documentacja: https://docs.cypress.io/api/commands/contains
+        // documentation: https://docs.cypress.io/api/commands/contains
 
 
         cy.contains('Bądź na bieżąco')
