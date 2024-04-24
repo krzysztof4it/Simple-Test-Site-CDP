@@ -14,7 +14,6 @@ const acceptCookies = 'button[data-cy="accept-cookies"]'
 describe('LocalAndSession', () => {
     beforeEach(() => {
 
-
         cy.visit("https://www.strava.com/dashboard");
 
     });
