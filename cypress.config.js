@@ -9,7 +9,7 @@ module.exports = defineConfig({
 
   e2e: {
 
-    baseUrl: 'https://fabrykatestow.pl/',
+    baseUrl: 'https://simpletestsite.fabrykatestow.pl',
     setupNodeEvents(on, config) {
       // implement node event listeners here
       require("cypress-localstorage-commands/plugin")(on, config);
