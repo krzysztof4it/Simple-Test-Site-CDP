@@ -45,6 +45,10 @@ class HomePage{
     }
     // TODO -> 7 - 12 Tab
 
+    clickDropdownTab(){
+        cy.get(dropdownListHeader).click()
+    }
+
     visitPage(){
         const url = new Urls() // def class Url
         url.visitHomePage() //method open visitHP

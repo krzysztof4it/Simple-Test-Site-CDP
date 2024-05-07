@@ -2,6 +2,8 @@ import {ne} from "@faker-js/faker";
 import HomePage from "../../page-objects/homePage";
 import InputPage from "../../page-objects/inputPage";
 import CheckboxPage from "../../page-objects/checkboxPage";
+import HoversPage from "../../page-objects/hoversPage";
+import DropdownListPage from "../../page-objects/dropdownListPage";
 
 describe('SimpleTabs - Test simple tabs 1-4', () => {
 
@@ -12,22 +14,39 @@ describe('SimpleTabs - Test simple tabs 1-4', () => {
     });
 
     it('Test simple tabs 1-4', () => {
-        const tab = new HomePage()
+        const homePage = new HomePage()
         const inputTab = new InputPage()
-        tab.clickInputsTab()
+        homePage.clickInputsTab()
         inputTab.typeNumberIntoFiled()
         cy.wait(2000)
         inputTab.typeTextIntoFiled()
 
     })
 
-    it.only('Test Checkbox Tab', () => {
-        const tab = new HomePage()
-        const checkboxTab = new CheckboxPage()
+    it('Test Checkbox Tab', () => {
+        const homePage = new HomePage()
+        homePage.clickCheckboxTab()
 
-        tab.clickCheckboxTab()
+        const checkboxTab = new CheckboxPage()
         checkboxTab.checkFirstCheckbox()
         checkboxTab.uncheckedLastCheckbox()
+
+    })
+
+    it('Test Dropdown list', () => {
+        const homePage = new HomePage()
+        homePage.clickDropdownTab()
+
+        const dropDownPage = new DropdownListPage()
+        dropDownPage.choseDropdownListFirstOption()
+    })
+
+    it.only('Test Hover Tab', () => {
+        const homePage = new HomePage()
+        homePage.clickHoversHeader()
+
+        const hoversPage = new HoversPage()
+        hoversPage.hoverOverElement()
 
     })
 
