@@ -4,6 +4,7 @@ import InputPage from "../../page-objects/inputPage";
 import CheckboxPage from "../../page-objects/checkboxPage";
 import HoversPage from "../../page-objects/hoversPage";
 import DropdownListPage from "../../page-objects/dropdownListPage";
+import BasicAuthPage from "../../page-objects/basicAuthPage";
 
 describe('SimpleTabs - Test simple tabs 1-4', () => {
 
@@ -41,13 +42,27 @@ describe('SimpleTabs - Test simple tabs 1-4', () => {
         dropDownPage.choseDropdownListFirstOption()
     })
 
-    it.only('Test Hover Tab', () => {
+    it('Test Hover Tab', () => {
         const homePage = new HomePage()
         homePage.clickHoversHeader()
 
         const hoversPage = new HoversPage()
         hoversPage.hoverOverElement()
 
+    })
+
+    it.only('5. Test Basic auth', ()=>{
+        const homePage = new HomePage()
+        homePage.clickBasicAuthTab()
+
+        const basicAuthPage = new BasicAuthPage()
+
+        basicAuthPage.login()
+        basicAuthPage.checkLogin()
+        basicAuthPage.returnToMain()
+
+        homePage.clickBasicAuthTab() // click Tab
+        basicAuthPage.loginFalied()
     })
 
 })
