@@ -43,10 +43,29 @@ class HomePage{
     clickFormTab(){
         cy.get(formHeader).click()
     }
-    // TODO -> 7 - 12 Tab
 
     clickDropdownTab(){
         cy.get(dropdownListHeader).click()
+    }
+
+    clickKeyPressesTab(){
+        cy.get(keyPressesHeader).click()
+    }
+
+    clickDragAndDropTab(){
+        cy.get(dropAndDropHeader).click()
+    }
+
+    clickAddRemoveElementsTab(){
+        cy.get(addRemoveElementsHeader).click()
+    }
+
+    clickStatusCodesTab(){
+        cy.get(statusCodesHeader).click()
+    }
+
+    clickIFrameTab(){
+        cy.get(iframeHeader).click()
     }
 
     visitPage(){
