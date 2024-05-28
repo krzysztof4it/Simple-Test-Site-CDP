@@ -7,6 +7,9 @@ import DropdownListPage from "../../page-objects/dropdownListPage";
 import BasicAuthPage from "../../page-objects/basicAuthPage";
 import FormPage from "../../page-objects/formPage";
 import KeyPressesPage from "../../page-objects/keyPressesPage";
+import IFramePage from "../../page-objects/iFramePage";
+import AddRemoveElement from "../../page-objects/addRemoveElement";
+import StatusCodePage from "../../page-objects/statusCodePage";
 
 describe('SimpleTabs - Test simple tabs 1-4', () => {
 
@@ -28,7 +31,8 @@ describe('SimpleTabs - Test simple tabs 1-4', () => {
 
     it('2. Date pickier', () => {
         const homePage = new HomePage()
-
+        homePage.clickDatePickerTab()
+        //TODO zaawansowane
 
     })
 
@@ -81,7 +85,7 @@ describe('SimpleTabs - Test simple tabs 1-4', () => {
         dropDownPage.choseDropdownListFirstOption()
     })
 
-    it.only('8. Test Key presses', () => {
+    it('8. Test Key presses', () => {
         const homePage = new HomePage()
         homePage.clickKeyPressesTab()
 
@@ -90,7 +94,42 @@ describe('SimpleTabs - Test simple tabs 1-4', () => {
 
     })
 
+    it('9. Test Drag & drop', () => {
+        const homePage = new HomePage()
+        homePage.clickDragAndDropTab()
+
+        // TODO Zaawansowane
+
+    })
+
+    it('10 Test Add/ Remove elements', () => {
+        const homePage = new HomePage()
+        homePage.clickAddRemoveElementsTab()
+
+        const aRPage = new AddRemoveElement()
+        aRPage.testAddElement()
+        aRPage.removeElement()
+
+    })
+
+    it('11. Test Status codes', () => {
+        const homePage = new HomePage()
+        homePage.clickStatusCodesTab()
+
+        const statusCode = new StatusCodePage()
 
 
+    })
+
+    it.only('12. Test IFrame', () => {
+        const homePage = new HomePage()
+        homePage.clickIFrameTab()
+
+        const iframeTest = new IFramePage()
+        iframeTest.checkButton1()
+      //  iframeTest.checkButton2()
+        // TODO
+
+    })
 
 })
