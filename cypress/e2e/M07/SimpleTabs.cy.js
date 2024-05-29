@@ -1,4 +1,3 @@
-import {ne} from "@faker-js/faker";
 import HomePage from "../../page-objects/homePage";
 import InputPage from "../../page-objects/inputPage";
 import CheckboxPage from "../../page-objects/checkboxPage";
@@ -127,7 +126,7 @@ describe('SimpleTabs - Test simple tabs 1-4', () => {
 
         const iframeTest = new IFramePage()
         iframeTest.checkButton1()
-      //  iframeTest.checkButton2()
+        iframeTest.checkButton2()
         // TODO
 
     })
