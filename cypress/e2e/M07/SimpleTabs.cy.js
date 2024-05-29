@@ -116,18 +116,19 @@ describe('SimpleTabs - Test simple tabs 1-4', () => {
         homePage.clickStatusCodesTab()
 
         const statusCode = new StatusCodePage()
-
-
+        statusCode.check200Code()
+        statusCode.check305Code()
+        statusCode.check404Code()
+        statusCode.check500Code()
     })
 
-    it.only('12. Test IFrame', () => {
+    it('12. Test IFrame', () => {
         const homePage = new HomePage()
         homePage.clickIFrameTab()
 
         const iframeTest = new IFramePage()
         iframeTest.checkButton1()
         iframeTest.checkButton2()
-        // TODO
 
     })
 

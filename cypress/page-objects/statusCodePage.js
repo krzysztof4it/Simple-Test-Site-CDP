@@ -1,30 +1,49 @@
-const code200 = '#200siteAnchor'
-const code305 = '#305siteAnchor'
-const code404 = '#404siteAnchor'
-const code500 = '#500siteAnchor'
+const url200 = 'http://httpstat.us/200'
+const url305 = 'https://httpstat.us/305'
+const url404 = 'https://httpstat.us/404'
+const url500 = 'https://httpstat.us/500'
 
 class StatusCodePage{
     check200Code(){
-        cy.get(code200).click()
-            cy.then((response) => {
-            const  bodyPOST = JSON.stringify(response.body)
-            expect(response.status).to.eq(200) // check kode HTTP 201?
-            cy.log(bodyPOST) // show message
-
-                //TODO
+        cy.request(url200).then((response) => {
+            const body = response.body
+            cy.log(body)
+            expect(response.status).to.eq(200)
         })
     }
 
     check305Code(){
-
+        cy.request({
+            url: url305,
+            followRedirect: false,
+            failOnStatusCode: false
+        },).then((response) => {
+            //const body = response.body
+            //cy.log(body)
+            expect(response.status).to.eq(305)
+        })
     }
 
     check404Code(){
-
+        cy.request({
+            url: url404,
+            failOnStatusCode: false
+        }).then((response) => {
+            const body = response.body
+            cy.log(body)
+            expect(response.status).to.eq(404)
+        })
     }
 
     check500Code(){
-
+        cy.request({
+            url: url500,
+            failOnStatusCode: false
+        }).then((response) => {
+            const body = response.body
+            cy.log(body)
+            expect(response.status).to.eq(500)
+        })
     }
 
 }
