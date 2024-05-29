@@ -9,8 +9,9 @@ import KeyPressesPage from "../../page-objects/keyPressesPage";
 import IFramePage from "../../page-objects/iFramePage";
 import AddRemoveElement from "../../page-objects/addRemoveElement";
 import StatusCodePage from "../../page-objects/statusCodePage";
+import DataPickerPage from "../../page-objects/dataPickerPage";
 
-describe('SimpleTabs - Test simple tabs 1-4', () => {
+describe('SimpleTabs - Test simple tabs All', () => {
 
     beforeEach(() => {
         const home = new HomePage()
@@ -28,10 +29,13 @@ describe('SimpleTabs - Test simple tabs 1-4', () => {
 
     })
 
-    it('2. Date pickier', () => {
+    it.only('2. Date pickier', () => {
         const homePage = new HomePage()
         homePage.clickDatePickerTab()
-        //TODO zaawansowane
+
+        const datePicker = new DataPickerPage()
+        datePicker.checkData()
+        datePicker.checkOutOfRangeData()
 
     })
 
