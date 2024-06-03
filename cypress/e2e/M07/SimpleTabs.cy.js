@@ -10,6 +10,7 @@ import IFramePage from "../../page-objects/iFramePage";
 import AddRemoveElement from "../../page-objects/addRemoveElement";
 import StatusCodePage from "../../page-objects/statusCodePage";
 import DataPickerPage from "../../page-objects/dataPickerPage";
+import DragAndDropPage from "../../page-objects/dragAndDropPage";
 
 describe('SimpleTabs - Test simple tabs All', () => {
 
@@ -29,7 +30,7 @@ describe('SimpleTabs - Test simple tabs All', () => {
 
     })
 
-    it.only('2. Date pickier', () => {
+    it('2. Date pickier', () => {
         const homePage = new HomePage()
         homePage.clickDatePickerTab()
 
@@ -97,11 +98,13 @@ describe('SimpleTabs - Test simple tabs All', () => {
 
     })
 
-    it('9. Test Drag & drop', () => {
+    it.only('9. Test Drag & drop', () => {
         const homePage = new HomePage()
         homePage.clickDragAndDropTab()
 
-        // TODO Zaawansowane
+        const dragAndDrop = new DragAndDropPage()
+        dragAndDrop.dragA()
+        dragAndDrop.dragB()
 
     })
 
