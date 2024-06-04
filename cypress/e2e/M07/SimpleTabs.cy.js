@@ -98,7 +98,7 @@ describe('SimpleTabs - Test simple tabs All', () => {
 
     })
 
-    it.only('9. Test Drag & drop', () => {
+    it('9. Test Drag & drop', () => {
         const homePage = new HomePage()
         homePage.clickDragAndDropTab()
 
